@@ -27,6 +27,7 @@ app.post("/uploadimage", (req, res) => {
 
   const file = req.files.imageFile;
   const fileName = req.body.imageName;
+  console.log(fileName);
 
   file.mv(`${__dirname}/../frontend/public/${fileName}.jpg`, (error) => {
     if (error) {
@@ -39,6 +40,12 @@ app.post("/uploadimage", (req, res) => {
   });
 });
 
+// app.checkout('/getdata', (req, res){
+//   res.status(200).send({
+//     nam: jakab,
+//     afe: 99,
+//     status: 'active'
+//   }}))
 app.listen(9000, () => {
   console.log(`Example app listening at port http://127.0.0.1:9000`);
 });
